@@ -18,7 +18,11 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var stackViewH: UIStackView!
     
+    @IBAction func refreshAnns(_ sender: Any) {
+        mapView.addAnnotations(pins!)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

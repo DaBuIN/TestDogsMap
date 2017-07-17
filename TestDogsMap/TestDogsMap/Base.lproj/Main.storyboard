@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -69,29 +70,49 @@
                                 </items>
                             </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dlv-Di-0KP" userLabel="mapView">
-                                <rect key="frame" x="24" y="72" width="327" height="587"/>
+                                <rect key="frame" x="24" y="72" width="327" height="520"/>
                             </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HOs-Z3-Jya" userLabel="stackView">
+                                <rect key="frame" x="16" y="600" width="343" height="67"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4W-Si-seM">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="67"/>
+                                        <state key="normal" title="Refresh"/>
+                                        <connections>
+                                            <action selector="refreshAnns:" destination="q01-wW-2LK" eventType="touchUpInside" id="x7s-02-IlH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="dlv-Di-0KP" secondAttribute="trailing" constant="8" id="0q9-cE-tYk" userLabel="trailingMargin = mapView.trailing + 4"/>
-                            <constraint firstItem="dlv-Di-0KP" firstAttribute="leading" secondItem="XCB-V2-Qe2" secondAttribute="leadingMargin" constant="8" id="1MZ-hq-DkE" userLabel="mapView.leading = leadingMargin + 4"/>
+                            <constraint firstItem="HOs-Z3-Jya" firstAttribute="bottom" secondItem="Mnn-L8-tI5" secondAttribute="top" id="334-Rh-jJm"/>
+                            <constraint firstItem="HOs-Z3-Jya" firstAttribute="centerX" secondItem="dlv-Di-0KP" secondAttribute="centerX" id="6zU-gd-6DR"/>
                             <constraint firstItem="WzD-Lh-OzU" firstAttribute="top" secondItem="FG4-pS-c0a" secondAttribute="bottom" id="7r6-UW-aD7"/>
+                            <constraint firstItem="HOs-Z3-Jya" firstAttribute="leading" secondItem="XCB-V2-Qe2" secondAttribute="leadingMargin" id="C7e-pV-2yU"/>
+                            <constraint firstItem="dlv-Di-0KP" firstAttribute="top" secondItem="WzD-Lh-OzU" secondAttribute="bottom" constant="8" id="CDa-f4-hTc"/>
+                            <constraint firstItem="HOs-Z3-Jya" firstAttribute="top" secondItem="dlv-Di-0KP" secondAttribute="bottom" constant="8" id="CbN-Xd-sHa"/>
                             <constraint firstAttribute="trailing" secondItem="WzD-Lh-OzU" secondAttribute="trailing" id="FvH-MB-QSf"/>
-                            <constraint firstItem="dlv-Di-0KP" firstAttribute="top" secondItem="WzD-Lh-OzU" secondAttribute="bottom" constant="8" id="YUp-kx-zdh"/>
+                            <constraint firstItem="dlv-Di-0KP" firstAttribute="top" secondItem="WzD-Lh-OzU" secondAttribute="bottom" constant="8" id="Lcv-ZH-xYz"/>
+                            <constraint firstItem="dlv-Di-0KP" firstAttribute="leading" secondItem="XCB-V2-Qe2" secondAttribute="leadingMargin" constant="8" id="ePq-oh-EtD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HOs-Z3-Jya" secondAttribute="trailing" id="hF5-Gy-8Vt"/>
                             <constraint firstItem="WzD-Lh-OzU" firstAttribute="leading" secondItem="XCB-V2-Qe2" secondAttribute="leading" id="j17-BS-bxj"/>
-                            <constraint firstItem="Mnn-L8-tI5" firstAttribute="top" secondItem="dlv-Di-0KP" secondAttribute="bottom" constant="8" id="rvz-J9-xAM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dlv-Di-0KP" secondAttribute="trailing" constant="8" id="jzf-t5-wvT"/>
+                            <constraint firstItem="HOs-Z3-Jya" firstAttribute="height" secondItem="XCB-V2-Qe2" secondAttribute="height" multiplier="0.1" id="qZv-I4-eYe"/>
+                            <constraint firstItem="dlv-Di-0KP" firstAttribute="leading" secondItem="XCB-V2-Qe2" secondAttribute="leadingMargin" constant="8" id="tkS-mH-1UC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="dlv-Di-0KP" id="viN-IQ-TUq"/>
                         <outlet property="navBar" destination="WzD-Lh-OzU" id="CKD-rn-hmG"/>
+                        <outlet property="stackViewH" destination="HOs-Z3-Jya" id="1Mj-Ep-y4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtn-xj-KOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FWa-83-2cq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="910" y="60"/>
+            <point key="canvasLocation" x="909.60000000000002" y="59.820089955022496"/>
         </scene>
     </scenes>
 </document>
