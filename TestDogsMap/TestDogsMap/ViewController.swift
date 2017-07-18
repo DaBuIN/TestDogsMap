@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // test commit by Rand God
 
     @IBAction func backHome(segue:UIStoryboardSegue) {
         print("back home")
