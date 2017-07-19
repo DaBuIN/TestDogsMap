@@ -31,11 +31,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtT-O4-rrq">
-                                <rect key="frame" x="172" y="241" width="30" height="30"/>
+                                <rect key="frame" x="126" y="241" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go!"/>
+                                <state key="normal" title="多點資料插大頭針"/>
                                 <connections>
                                     <action selector="goTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xD0-UN-Gix"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ld-Jb-MFW">
+                                <rect key="frame" x="156" y="279" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="地點選取"/>
+                                <connections>
+                                    <action selector="pickOnePlace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BvA-jc-10M"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -44,6 +52,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Pick PlaceVC-->
+        <scene sceneID="pxH-y5-Dlb">
+            <objects>
+                <viewController storyboardIdentifier="pickPlaceVC" id="Gvg-XE-bZx" customClass="PickPlaceVC" customModule="TestDogsMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9bK-1t-coQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="jh6-Td-AG1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cnu-Y6-gjX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p80-y8-8qJ" userLabel="navBar">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Pick One Place" id="E5N-Ed-ygn"/>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cq9-BI-Cf4" userLabel="mapView">
+                                <rect key="frame" x="20" y="72" width="335" height="587"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cq9-BI-Cf4" firstAttribute="top" secondItem="p80-y8-8qJ" secondAttribute="bottom" constant="8" id="5zz-5W-WTh"/>
+                            <constraint firstItem="p80-y8-8qJ" firstAttribute="leading" secondItem="Cnu-Y6-gjX" secondAttribute="leading" id="LYA-RI-4uD"/>
+                            <constraint firstItem="cq9-BI-Cf4" firstAttribute="leading" secondItem="Cnu-Y6-gjX" secondAttribute="leadingMargin" constant="4" id="P9q-dj-yqb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cq9-BI-Cf4" secondAttribute="trailing" constant="4" id="Pyr-g0-jlr"/>
+                            <constraint firstAttribute="trailing" secondItem="p80-y8-8qJ" secondAttribute="trailing" id="bu7-At-pbQ"/>
+                            <constraint firstItem="p80-y8-8qJ" firstAttribute="top" secondItem="9bK-1t-coQ" secondAttribute="bottom" id="eD7-a8-eQ9"/>
+                            <constraint firstItem="jh6-Td-AG1" firstAttribute="top" secondItem="cq9-BI-Cf4" secondAttribute="bottom" constant="8" id="xDv-lp-C8t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="cq9-BI-Cf4" id="JTb-Bx-iNK"/>
+                        <outlet property="navBar" destination="p80-y8-8qJ" id="qFj-J8-Gl1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5w-ei-Ijv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="666"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="jPr-x7-1mx">
@@ -112,7 +162,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtn-xj-KOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FWa-83-2cq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="909.60000000000002" y="59.820089955022496"/>
+            <point key="canvasLocation" x="1041" y="-66"/>
         </scene>
     </scenes>
 </document>

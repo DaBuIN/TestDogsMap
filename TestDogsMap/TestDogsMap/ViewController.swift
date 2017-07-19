@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // test commit by Rand God
 
     @IBAction func backHome(segue:UIStoryboardSegue) {
         print("back home")
@@ -23,6 +22,14 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func pickOnePlace(_ sender: Any) {
+        if let vc:PickPlaceVC = storyboard?.instantiateViewController(withIdentifier: "pickPlaceVC") as! PickPlaceVC {
+            
+            show(vc, sender: self)
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
