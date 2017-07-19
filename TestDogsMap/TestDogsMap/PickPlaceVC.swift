@@ -55,9 +55,24 @@ class PickPlaceVC: UIViewController, MKMapViewDelegate {
     }
     
     var countTap:Int = 0
-    func mapTapHandle( gestureReg: UITapGestureRecognizer ) {
+    func mapTapHandle( tapReg: UITapGestureRecognizer ) {
         countTap += 1
-        print("Tap(\(countTap)) on mapView. OK!")
+        
+        let location = tapReg.location(in: mapView)
+        let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
+        
+        print("Tap(\(countTap)) on mapView: \(coordinate.latitude),\(coordinate.longitude)")
+        
+        // add annotation
+        
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = coordinate
+        annotation.title = "Tap(\(countTap))"
+        annotation.subtitle = "\(coordinate.latitude),\(coordinate.longitude)"
+        
+        mapView.addAnnotation(annotation)
+
     }
 
 }
