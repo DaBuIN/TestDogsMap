@@ -71,19 +71,56 @@
                                     <navigationItem title="Pick One Place" id="E5N-Ed-ygn"/>
                                 </items>
                             </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cq9-BI-Cf4" userLabel="mapView">
-                                <rect key="frame" x="20" y="72" width="335" height="587"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cq9-BI-Cf4" userLabel="mapView">
+                                <rect key="frame" x="20" y="72" width="335" height="520.5"/>
                             </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qe0-2S-yCr" userLabel="stackView">
+                                <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JI-YM-UTQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="66.5"/>
+                                        <state key="normal" title="User"/>
+                                        <connections>
+                                            <action selector="showUser:" destination="Gvg-XE-bZx" eventType="touchUpInside" id="PbX-qK-sW4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KF5-zd-p73">
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="66.5"/>
+                                        <state key="normal" title="單數模式"/>
+                                        <connections>
+                                            <action selector="allowOnlyOne:" destination="Gvg-XE-bZx" eventType="touchUpInside" id="IPC-PR-bi5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTW-wj-t5t">
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="66.5"/>
+                                        <state key="normal" title="複數模式"/>
+                                        <connections>
+                                            <action selector="allowMultipleOnes:" destination="Gvg-XE-bZx" eventType="touchUpInside" id="gIO-z2-oLA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSb-6c-PoY">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="66.5"/>
+                                        <state key="normal" title="清除"/>
+                                        <connections>
+                                            <action selector="cleanAnnotations:" destination="Gvg-XE-bZx" eventType="touchUpInside" id="vMw-d8-Xuz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cq9-BI-Cf4" firstAttribute="top" secondItem="p80-y8-8qJ" secondAttribute="bottom" constant="8" id="5zz-5W-WTh"/>
+                            <constraint firstItem="qe0-2S-yCr" firstAttribute="leading" secondItem="Cnu-Y6-gjX" secondAttribute="leading" id="1iL-GO-ZUM"/>
+                            <constraint firstAttribute="trailing" secondItem="qe0-2S-yCr" secondAttribute="trailing" id="4rS-iY-u0u"/>
+                            <constraint firstItem="cq9-BI-Cf4" firstAttribute="leading" secondItem="Cnu-Y6-gjX" secondAttribute="leadingMargin" constant="4" id="8FW-BI-dEA"/>
                             <constraint firstItem="p80-y8-8qJ" firstAttribute="leading" secondItem="Cnu-Y6-gjX" secondAttribute="leading" id="LYA-RI-4uD"/>
-                            <constraint firstItem="cq9-BI-Cf4" firstAttribute="leading" secondItem="Cnu-Y6-gjX" secondAttribute="leadingMargin" constant="4" id="P9q-dj-yqb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cq9-BI-Cf4" secondAttribute="trailing" constant="4" id="Pyr-g0-jlr"/>
+                            <constraint firstItem="jh6-Td-AG1" firstAttribute="top" secondItem="qe0-2S-yCr" secondAttribute="bottom" id="N8P-ZJ-fav"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cq9-BI-Cf4" secondAttribute="trailing" constant="4" id="UaS-lX-Wfh"/>
                             <constraint firstAttribute="trailing" secondItem="p80-y8-8qJ" secondAttribute="trailing" id="bu7-At-pbQ"/>
                             <constraint firstItem="p80-y8-8qJ" firstAttribute="top" secondItem="9bK-1t-coQ" secondAttribute="bottom" id="eD7-a8-eQ9"/>
-                            <constraint firstItem="jh6-Td-AG1" firstAttribute="top" secondItem="cq9-BI-Cf4" secondAttribute="bottom" constant="8" id="xDv-lp-C8t"/>
+                            <constraint firstItem="qe0-2S-yCr" firstAttribute="top" secondItem="cq9-BI-Cf4" secondAttribute="bottom" constant="8" id="fUj-Nv-BaG"/>
+                            <constraint firstItem="cq9-BI-Cf4" firstAttribute="top" secondItem="p80-y8-8qJ" secondAttribute="bottom" constant="8" id="jtX-F8-LBI"/>
+                            <constraint firstItem="qe0-2S-yCr" firstAttribute="height" secondItem="Cnu-Y6-gjX" secondAttribute="height" multiplier="0.1" id="qd8-Yb-VlX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -93,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5w-ei-Ijv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1041" y="666"/>
+            <point key="canvasLocation" x="1040.8" y="665.21739130434787"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="jPr-x7-1mx">
